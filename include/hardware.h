@@ -1,3 +1,4 @@
+// clang-format off
 #pragma once
 
 #ifndef BOARD_ENDUSER
@@ -59,6 +60,42 @@
         #define OPENKNX_BI_ONLEVEL LOW
 
 
+    #endif
+
+    // Makerwolf UP1-PM-HF (custom board)
+    // GPIO 18,19,20,21: diode-protected and filtered
+    // GPIO 12,13,14,15: direct GPIO / I2C (unprotected)
+    // Pin 0,1: KNX Tx/Rx
+    // Pin 9: LD24x0 OUT, Pin 10: LD24x0 Rx, Pin 11: LD24x0 Tx
+    // GPIO6: ProgLED, GPIO7: ProgBtn
+    #ifdef DEVICE_MAKERWOLF_UP1_PM_HF
+        #define DEVICE_ID "MW-UP1-PM-HF"
+        #define DEVICE_NAME "Makerwolf UP1 Praesenzmelder"
+
+        #define OKNXHW_UP1_CONTROLLER2040
+
+        // HF Radar sensor (LD2412 / LD2450) on UART
+        #define HF_SERIAL Serial2
+        #define HF_SERIAL_SPEED 115200
+        #define HF_POWER_PIN 9       // LD24x0 OUT pin
+        #define HF_UART_RX_PIN 10    // LD24x0 Rx
+        #define HF_UART_TX_PIN 11    // LD24x0 Tx
+
+        // I2C for lux sensor (unprotected GPIO)
+        #define I2C_WIRE Wire
+        #define I2C_SDA_PIN 24
+        #define I2C_SCL_PIN 25
+
+        // Protected GPIO for general use
+        #define OPENKNX_BI_GPIO_PINS 18, 19, 20, 21, 12, 13, 14, 15
+        #define OPENKNX_BI_GPIO_COUNT 8
+        #define OPENKNX_BI_ONLEVEL LOW
+
+        // LEDs - using protected GPIO
+        #define PRESENCE_LED_PIN 18
+        #define PRESENCE_LED_PIN_ACTIVE_ON LOW
+        #define MOVE_LED_PIN 19
+        #define MOVE_LED_PIN_ACTIVE_ON LOW
     #endif
 
     #include <OpenKNXHardware.h>
