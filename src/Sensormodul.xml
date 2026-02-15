@@ -31,7 +31,7 @@
 
   <op:define prefix="BASE"
              share="../lib/OGM-Common/src/Common.share.xml"
-             ModuleType="1" >
+             ModuleType="10" >
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
   </op:define>
 
@@ -44,8 +44,7 @@
 
   <op:define prefix="SENS" 
              share="../lib/OFM-SensorModule/src/Sensormodul.share.xml"
-             KoSingleOffset="60"
-             ModuleType="4" >
+             ModuleType="40" >
     <op:verify File="../lib/OFM-SensorModule/library.json" ModuleVersion="%SENS_VerifyVersion%" />
   </op:define>
 
@@ -67,7 +66,7 @@
     template="../lib/OFM-PresenceModule/src/PMmodul.templ.xml"
     NumChannels="40"
     KoOffset="120"
-    ModuleType="3">
+    ModuleType="30">
     <op:verify File="../lib/OFM-PresenceModule/library.json" ModuleVersion="%PM_VerifyVersion%" />
   </op:define>
 
@@ -76,7 +75,7 @@
     template="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml"
     NumChannels="30"
     KoOffset="1220"
-    ModuleType="5">
+    ModuleType="50">
     <op:verify File="../lib/OFM-VirtualButton/library.json" ModuleVersion="%BTN_VerifyVersion%" />
   </op:define>
 
@@ -85,7 +84,7 @@
     template="../lib/OFM-BinaryInput/src/BinaryInputChannel.templ.xml"
     NumChannels="4"
     KoOffset="45"
-    ModuleType="6">
+    ModuleType="60">
     <op:verify File="../lib/OFM-BinaryInput/library.json" ModuleVersion="%BI_VerifyVersion%" />
   </op:define>
 
@@ -94,7 +93,7 @@
     template="../lib/OFM-ADCInput/src/ADCInputChannel.templ.xml"
     NumChannels="4"
     KoOffset="56"
-    ModuleType="7">
+    ModuleType="70">
     <op:verify File="../lib/OFM-ADCInput/library.json" ModuleVersion="%ADC_VerifyVersion%" />
   </op:define>
 
@@ -103,7 +102,7 @@
     template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
     NumChannels="99"
     KoOffset="920"
-    ModuleType="8">
+    ModuleType="10">
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
 
