@@ -31,7 +31,7 @@
 
   <op:define prefix="BASE"
              share="../lib/OGM-Common/src/Common.share.xml"
-             ModuleType="10" >
+             ModuleType="1" >
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
   </op:define>
 
@@ -44,26 +44,30 @@
 
   <op:define prefix="SENS" 
              share="../lib/OFM-SensorModule/src/Sensormodul.share.xml"
-             ModuleType="40" >
+             KoSingleOffset="60"
+             ModuleType="4" >
     <op:verify File="../lib/OFM-SensorModule/library.json" ModuleVersion="%SENS_VerifyVersion%" />
   </op:define>
 
-  <op:define prefix="WIRE" 
+  <!-- WIRE disabled: project variant without OneWire -->
+  <!--
+  <op:define prefix="WIRE"
              share="../lib/OFM-OneWireModule/src/WireGateway.share.xml"
              template="../lib/OFM-OneWireModule/src/WireGateway.templ.xml"
-             NumChannels="30" 
-             KoOffset="90"  
-             ModuleType="20" 
+             NumChannels="30"
+             KoOffset="90"
+             ModuleType="20"
              KoSingleOffset="10" >
     <op:verify File="../lib/OFM-OneWireModule/library.json" ModuleVersion="%WIRE_VerifyVersion%" />
   </op:define>
+  -->
 
   <op:define prefix="PM"
     share="../lib/OFM-PresenceModule/src/PMmodul.share.xml"
     template="../lib/OFM-PresenceModule/src/PMmodul.templ.xml"
     NumChannels="40"
     KoOffset="120"
-    ModuleType="30">
+    ModuleType="3">
     <op:verify File="../lib/OFM-PresenceModule/library.json" ModuleVersion="%PM_VerifyVersion%" />
   </op:define>
 
@@ -72,7 +76,7 @@
     template="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml"
     NumChannels="30"
     KoOffset="1220"
-    ModuleType="50">
+    ModuleType="5">
     <op:verify File="../lib/OFM-VirtualButton/library.json" ModuleVersion="%BTN_VerifyVersion%" />
   </op:define>
 
@@ -81,7 +85,7 @@
     template="../lib/OFM-BinaryInput/src/BinaryInputChannel.templ.xml"
     NumChannels="4"
     KoOffset="45"
-    ModuleType="60">
+    ModuleType="6">
     <op:verify File="../lib/OFM-BinaryInput/library.json" ModuleVersion="%BI_VerifyVersion%" />
   </op:define>
 
@@ -90,7 +94,7 @@
     template="../lib/OFM-ADCInput/src/ADCInputChannel.templ.xml"
     NumChannels="4"
     KoOffset="56"
-    ModuleType="70">
+    ModuleType="7">
     <op:verify File="../lib/OFM-ADCInput/library.json" ModuleVersion="%ADC_VerifyVersion%" />
   </op:define>
 
@@ -99,7 +103,7 @@
     template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
     NumChannels="99"
     KoOffset="920"
-    ModuleType="10">
+    ModuleType="8">
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
 
